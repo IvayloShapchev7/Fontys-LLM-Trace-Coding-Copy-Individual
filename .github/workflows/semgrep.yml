@@ -1,0 +1,13 @@
+name: Semgrep
+on:
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  semgrep:
+    name: Scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: returntocorp/semgrep-action@v1
+        with:
+          config: "p/default" # Runs default security rules
