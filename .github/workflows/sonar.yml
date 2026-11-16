@@ -26,7 +26,7 @@ jobs:
         run: dotnet tool install --global dotnet-sonarscanner
       - name: Build and Analyze
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Provided automatically by GitHub
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           dotnet-sonarscanner begin /k:"IvayloShapchev7_Fontys-LLM-Trace-Coding-Copy-Individual" /o:"ivayloshapchev7" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
